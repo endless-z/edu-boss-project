@@ -2,7 +2,7 @@
 node_modules
 /dist
 使用TS 开发Vue 项目.md
-
+使用TS开发Vue项目2.md
 # local env files
 .env.local
 .env.*.local

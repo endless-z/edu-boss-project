@@ -12,6 +12,7 @@
       <el-button type="warning">警告按钮</el-button>
       <el-button type="danger">危险按钮</el-button>
     </el-row>
+    <p class="text"> hello world</p>
   </div>
 </template>
 <script lang="ts">
@@ -32,4 +33,8 @@ export default class App extends Vue {
   }
 }
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.text {
+  color: $success-color
+}
+</style>
