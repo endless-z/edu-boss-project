@@ -1,7 +1,7 @@
 .DS_Store
 node_modules
 /dist
-
+使用TS 开发Vue 项目.md
 
 # local env files
 .env.local

@@ -4,11 +4,20 @@
     <!-- 根路由出口 -->
     <button @click="test">测试</button>
     <router-view/>
+    <el-row>
+      <el-button>默认按钮</el-button>
+      <el-button type="primary">主要按钮</el-button>
+      <el-button type="success">成功按钮</el-button>
+      <el-button type="info">信息按钮</el-button>
+      <el-button type="warning">警告按钮</el-button>
+      <el-button type="danger">危险按钮</el-button>
+    </el-row>
   </div>
 </template>
 <script lang="ts">
 import Vue from 'vue'
 import Component from 'vue-class-component'
+
 @Component
 export default class App extends Vue {
   name = '大白菜'
@@ -23,46 +32,4 @@ export default class App extends Vue {
   }
 }
 </script>
-
-<!--<script lang="ts">
-import Vue from 'vue'
-export default Vue.extend({
-  data () {
-    return {
-      name: '大白菜',
-      age: '18',
-      userInfo: {
-        title: '1',
-        age: 20
-      }
-    }
-  },
-  methods: {
-  }
-})
-</script>-->
-
-<!-- <script>
-// 1、编辑器给的类型提示
-// 2、TypeScript 编译期间的类型验证
-export default {
-  data () {
-    return {
-      name: '大白菜',
-      age: '18',
-      userInfo: {
-        title: '1',
-        age: 20
-      }
-    }
-  },
-  methods: {
-    test () {
-      // this.data.
-      this.age.abc()
-    }
-  }
-}
-</script>-->
-
 <style lang="scss" scoped></style>
