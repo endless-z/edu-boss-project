@@ -105,7 +105,10 @@ router.beforeEach((to, from, next) => {
     if (!store.state.user) {
       // 跳转登录页面
       next({
-        name: 'login'
+        name: 'login',
+        query: { // 通过 url 传递字符串的参数
+          redirect: to.fullPath // 把登录成功需要返回的页面告诉登录页面
+        }
       })
     } else {
       // 允许通过

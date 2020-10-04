@@ -69,9 +69,7 @@ export default Vue.extend({
           this.$store.commit('setUser', data.content)
           // 在访问需要登录的页面的时候判断有没有登录状态 (路由拦截器)
           // 跳转首页
-          this.$router.push({
-            name: 'home'
-          })
+          this.$router.push(this.$route.query.redirect as string || '/')
           this.$message.success('登录成功')
         }
       } catch (err) {
