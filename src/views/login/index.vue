@@ -30,7 +30,7 @@ import Vue from 'vue'
 import { Form } from 'element-ui'
 import { login } from '@/services/user'
 export default Vue.extend({
-  name: 'Login',
+  name: 'store',
   data () {
     return {
       form: {
@@ -65,6 +65,9 @@ export default Vue.extend({
         if (data.state !== 1) {
           this.$message.error(data.message)
         } else {
+          // 登录成功，记录登录状态，状态需要能够全局访问 (存放在Vuex中)
+          this.$store.commit('setUser', data.content)
+          // 在访问需要登录的页面的时候判断有没有登录状态 (路由拦截器)
           // 跳转首页
           this.$router.push({
             name: 'home'
