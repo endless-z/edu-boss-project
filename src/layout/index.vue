@@ -31,7 +31,7 @@ export default Vue.extend({
   min-height: 100vh;
 }
  .el-aside {
-  background-color: #D3DCE6;
+  background-color: #304156;
   color: #333;
   line-height: 200px;
 }
@@ -39,7 +39,7 @@ export default Vue.extend({
   background-color: #ffffff;
 }
 .el-main {
-  background-color: #E9EEF3;
+  background-color: #ffffff;
   color: #333;
 }
 </style>

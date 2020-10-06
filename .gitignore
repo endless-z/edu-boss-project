@@ -5,6 +5,7 @@ node_modules
 使用TS开发Vue项目2.md
 使用TS开发Vue项目3.md
 用户登录和身份认证.md
+用户权限.md
 # local env files
 .env.local
 .env.*.local
