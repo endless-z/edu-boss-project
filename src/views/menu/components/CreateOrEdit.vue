@@ -87,7 +87,6 @@ export default {
   },
   methods: {
     async loadMenuInfo () {
-      console.log(this.menuId, '777')
       const { data } = await getEditMenuInfo(this.menuId || -1)
       if (data.data.menuInfo) {
         this.form = data.data.menuInfo
@@ -99,22 +98,13 @@ export default {
     async onSubmit () {
       // 1、表单验证
       // 2、验证通过， 通过表单
-      if (!this.isEdit) {
-        const { data } = await createOrUpdateMenu(this.form)
-        if (data.code === '000000') {
-          this.$message.success('提交成功')
-          this.closeDialog()
-        } else {
-          this.$message.error('提交失败')
-        }
+      const { data } = await createOrUpdateMenu(this.form)
+      if (data.code === '000000') {
+        this.$message.success('提交成功')
+        this.closeDialog()
+        this.$emit('loadAllMenus')
       } else {
-        const { data } = await createOrUpdateMenu(this.form)
-        if (data.code === '000000') {
-          this.$message.success('提交成功')
-          this.closeDialog() // 通知父组件修改
-        } else {
-          this.$message.error('提交失败')
-        }
+        this.$message.error('提交失败')
       }
     },
     closeDialog () {

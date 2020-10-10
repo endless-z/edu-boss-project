@@ -40,7 +40,7 @@
         </template>
       </el-table-column>
     </el-table>
-    <create-or-edit :isEdit="isEdit" ref="create"  @handleClose="handleClose" :dialogFormVisible="dialogFormVisible" :menuId="menuId"></create-or-edit>
+    <create-or-edit :isEdit="isEdit" ref="create"  @handleClose="handleClose" @loadAllMenus="loadAllMenus" :dialogFormVisible="dialogFormVisible" :menuId="menuId"></create-or-edit>
   </div>
 </template>
 
@@ -86,7 +86,6 @@ export default Vue.extend({
       // (this.$refs.create as any).loadMenuInfo()
       this.dialogFormVisible = true
       this.isEdit = true
-      console.log(this.menuId, 'iss')
     },
     handleDelete (item: any) {
       console.log('delet', item)
