@@ -3,6 +3,7 @@
     <el-dialog
       :title="isEdit ? '编辑菜单': '新增菜单'"
       :visible.sync="dialogFormVisible"
+      :before-close='closeDialog'
       width="30%">
       <el-form ref="form" :model="form" label-width="80px">
         <el-form-item label="菜单名称">
