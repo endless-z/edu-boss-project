@@ -34,7 +34,7 @@ export default Vue.extend({
   data () {
     return {
       form: {
-        phone: '18201288771',
+        phone: '18631142258',
         password: '111111'
       },
       isLoginLoading: false,
@@ -97,6 +97,7 @@ export default Vue.extend({
     }
     .title{
       font-size: 30px;
+      color: #ffffff;
       text-align: center;
       padding: 20px;
     }

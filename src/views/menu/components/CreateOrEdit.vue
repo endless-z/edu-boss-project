@@ -39,7 +39,7 @@
         </el-form-item>
       </el-form>
       <span slot="footer" class="dialog-footer">
-        <el-button @click="dialogFormVisible = false">取 消</el-button>
+        <el-button @click="closeDialog">取 消</el-button>
         <el-button type="primary" @click="onSubmit">确 定</el-button>
       </span>
     </el-dialog>
@@ -59,9 +59,9 @@ export default {
       type: Boolean,
       default: false
     },
-    id: {
+    menuId: {
       type: Number,
-      default: -1
+      default: 6
     }
   },
   data () {
@@ -78,12 +78,16 @@ export default {
       parentMenuList: [] // 父级菜单列表
     }
   },
-  created () {
-    this.loadMenuInfo()
+  watch: {
+    menuId: function (newVal, oldVal) {
+      console.log(newVal, oldVal)
+      this.loadMenuInfo()
+    }
   },
   methods: {
     async loadMenuInfo () {
-      const { data } = await getEditMenuInfo(this.id | -1)
+      console.log(this.menuId, '777')
+      const { data } = await getEditMenuInfo(this.menuId || -1)
       if (data.data.menuInfo) {
         this.form = data.data.menuInfo
       }
@@ -98,7 +102,7 @@ export default {
         const { data } = await createOrUpdateMenu(this.form)
         if (data.code === '000000') {
           this.$message.success('提交成功')
-          this.dialogFormVisible = false
+          this.closeDialog()
         } else {
           this.$message.error('提交失败')
         }
@@ -106,14 +110,17 @@ export default {
         const { data } = await createOrUpdateMenu(this.form)
         if (data.code === '000000') {
           this.$message.success('提交成功')
-          this.dialogFormVisible = false
+          this.closeDialog() // 通知父组件修改
         } else {
           this.$message.error('提交失败')
         }
       }
     },
+    closeDialog () {
+      this.$emit('handleClose')
+    },
     handleCreate () {
-      this.dialogFormVisible = true
+      // this.dialogFormVisible = true
     },
     handleChange () {
       console.log('change')
