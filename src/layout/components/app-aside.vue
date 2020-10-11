@@ -1,10 +1,11 @@
 <template>
   <div class="aside">
     <el-menu
-      default-active="2"
+      :default-active="$route.path"
       class="el-menu-vertical-demo"
       @open="handleOpen"
       @close="handleClose"
+      unique-opened
       background-color="#304156"
       text-color="#fff"
       router
