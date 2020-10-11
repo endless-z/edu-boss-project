@@ -16,11 +16,11 @@ body {
 }
 
 // custom element theme
-// $--color-primary: $primary-color;
-// $--color-success: $success-color;
-// $--color-warning: $warning-color;
-// $--color-danger: $danger-color;
-// $--color-info: $info-color;
+$--color-primary: $primary-color;
+$--color-success: $success-color;
+$--color-warning: $warning-color;
+$--color-danger: $danger-color;
+$--color-info: $info-color;
 // change font path, required
 $--font-path: '~element-ui/lib/theme-chalk/fonts';
 // import element default theme
@@ -29,10 +29,10 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 
 // overrides
 
-// .el-menu-item, .el-submenu__title {
-//   height: 50px;
-//   line-height: 50px;
-// }
+.el-menu-item, .el-submenu__title {
+  height: 50px;
+  line-height: 50px;
+}
 
 .el-pagination {
   color: #868e96;

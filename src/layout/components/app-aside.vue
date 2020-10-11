@@ -41,7 +41,7 @@
           <i class="el-icon-location"></i>
           <span>广告管理</span>
         </template>
-        <el-menu-item index="/asvert">
+        <el-menu-item index="/advert">
           <i class="el-icon-setting"></i>
           <span slot="title">广告列表</span>
         </el-menu-item>
