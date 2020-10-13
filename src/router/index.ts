@@ -72,6 +72,11 @@ const routes: Array<RouteConfig> = [
         }
       },
       {
+        path: '/updateAdvertise/:id',
+        name: 'updateAdvert',
+        component: () => import(/* webpackChunkName: 'editAdvert' */ '@/views/advert/components/editAdvert.vue')
+      },
+      {
         path: '/advert-space',
         name: 'advert-space',
         component: () => import(/* webpackChunkName: 'advert-space' */ '@/views/advert-space/index.vue'),

@@ -30,7 +30,7 @@ export default Vue.extend({
 .el-container{
   min-height: 100vh;
 }
- .el-aside {
+.el-aside {
   background-color: #304156;
   color: #333;
   line-height: 200px;
