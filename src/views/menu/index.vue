@@ -7,6 +7,7 @@
     <el-table
       :data="menus"
       border
+      v-loading="loading"
       style="width: 100%">
       <el-table-column
         type="index"
@@ -59,6 +60,7 @@ export default Vue.extend({
       dialogFormVisible: false,
       menus: [],
       menuId: -1,
+      loading: false,
       isEdit: false
     }
   },
@@ -67,9 +69,11 @@ export default Vue.extend({
   },
   methods: {
     async loadAllMenus () {
+      this.loading = true
       const { data } = await getAllMenus()
       if (data.code === '000000') {
         this.menus = data.data
+        this.loading = false
       }
     },
     handleCreate () {
