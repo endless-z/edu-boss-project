@@ -42,3 +42,25 @@ export const getAllSpaces = () => {
     url: '/front/ad/space/getAllSpaces'
   })
 }
+
+/**
+ * 编辑广告列表
+ */
+export const saveOrUpdate = (data: any) => {
+  return request({
+    method: 'POST',
+    url: '/front/ad/saveOrUpdate',
+    data
+  })
+}
+
+/**
+ * 广告图片上传
+ */
+export const uploadBannerImg = (data: any) => {
+  return request({
+    method: 'POST',
+    url: '/boss/course/upload',
+    data
+  })
+}

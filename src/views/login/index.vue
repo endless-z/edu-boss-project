@@ -97,7 +97,7 @@ export default Vue.extend({
     }
     .title{
       font-size: 30px;
-      color: #ffffff;
+      color: #333333;
       text-align: center;
       padding: 20px;
     }

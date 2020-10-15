@@ -3,7 +3,7 @@
     <div class="filter-container">
       <el-form :inline="true" class="demo-form-inline">
         <el-form-item>
-          <el-button type="primary" @click="onSearch" :disabled="loading">添加广告</el-button>
+          <el-button type="primary" @click="onAddBanner" :disabled="loading">添加广告</el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -122,6 +122,10 @@ export default Vue.extend({
         this.$message.success('修改成功')
         this.loadBannerList()
       }
+    },
+    // 添加广告
+    onAddBanner () {
+      this.$router.push('/updateAdvertise/null')
     },
     onSearch () {
       this.loadBannerList()
