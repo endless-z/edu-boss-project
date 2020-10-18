@@ -9,7 +9,6 @@
     </div>
 
     <!--表格 -->
-
     <el-table
       :data="advertList"
       border
@@ -43,6 +42,22 @@
         </template>
       </el-table-column>
     </el-table>
+
+    <el-dialog
+      :title="isEdit ? '编辑广告位': '新增广告位'"
+      :visible.sync="dialogFormVisible"
+      :before-close='closeDialog'
+      width="30%">
+      <el-form label-width="100px">
+        <el-form-item label="广告位名称">
+          <el-input v-model="name"></el-input>
+        </el-form-item>
+      </el-form>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="closeDialog">取 消</el-button>
+        <el-button type="primary" @click="onSubmit">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -58,6 +73,9 @@ export default Vue.extend({
         pageNum: 1,
         pageSize: 5
       },
+      name: '',
+      isEdit: false,
+      dialogFormVisible: false,
       advertList: []
     }
   },
@@ -69,6 +87,17 @@ export default Vue.extend({
       const { data } = await getAllSpaces(this.filterForm)
       console.log(data)
       this.advertList = data.content
+    },
+    onAddBanner () {
+      this.isEdit = false
+      this.dialogFormVisible = true
+    },
+    handleEdit () {
+      this.isEdit = true
+      this.dialogFormVisible = true
+    },
+    closeDialog () {
+      this.dialogFormVisible = false
     }
   },
   filters: {
