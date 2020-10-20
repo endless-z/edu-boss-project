@@ -98,7 +98,6 @@ request.interceptors.response.use(function (response) { // 状态码为 2xx 都�
           resolve(request(error.config))
         })
       })
-      return
     } else if (status === 403) {
       Message.error('没有权限，请联系管理员')
     } else if (status === 404) {
