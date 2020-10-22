@@ -34,7 +34,7 @@ export default Vue.extend({
   data () {
     return {
       form: {
-        phone: '18631142258',
+        phone: '18201288771',
         password: '111111'
       },
       isLoginLoading: false,

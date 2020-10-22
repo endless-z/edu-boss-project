@@ -41,7 +41,14 @@
         </template>
       </el-table-column>
     </el-table>
-    <create-or-edit :isEdit="isEdit" ref="create"  @handleClose="handleClose" @loadAllMenus="loadAllMenus" :dialogFormVisible="dialogFormVisible" :menuId="menuId"></create-or-edit>
+    <create-or-edit
+      :isEdit="isEdit"
+      ref="create"
+      @handleClose="handleClose"
+      @loadAllMenus="loadAllMenus"
+      :dialogFormVisible="dialogFormVisible"
+      :menuId="menuId"
+    ></create-or-edit>
   </div>
 </template>
 

@@ -72,6 +72,13 @@
       </el-pagination>
     </div>
 
+    <create-or-edit
+    :isEdit="isEdit"
+    ref="create"
+    @handleClose="handleClose"
+    @loadRoleList="loadRoleList"
+    :dialogFormVisible="dialogFormVisible"
+    ></create-or-edit>
   </div>
 </template>
 
@@ -79,9 +86,12 @@
 import Vue from 'vue'
 import { getRoleList } from '@/services/role'
 import dayjs from 'dayjs'
-
+import createOrEdit from './component/CreateOrEdit.vue'
 export default Vue.extend({
   name: 'RolePage',
+  components: {
+    createOrEdit
+  },
   data () {
     return {
       filterForm: {
@@ -89,7 +99,9 @@ export default Vue.extend({
         name: '',
         size: 10
       },
+      dialogFormVisible: false,
       loading: false,
+      isEdit: false,
       currentPage: 1,
       roleList: [],
       totalCount: 0
@@ -118,8 +130,12 @@ export default Vue.extend({
       this.filterForm.current = 1
       this.loadRoleList()
     },
+    handleClose () {
+      this.dialogFormVisible = false
+    },
     onAddUser () {
       console.log('add')
+      this.dialogFormVisible = true
     }
   },
   filters: {
